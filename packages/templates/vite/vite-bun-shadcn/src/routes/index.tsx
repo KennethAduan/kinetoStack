@@ -50,7 +50,7 @@ function Index() {
             </Button>
             <Button size="lg" variant="outline" asChild>
               <a
-                href="https://github.com/KennethAduan/kenStack-shadcn-vite"
+                href="https://github.com/KennethAduan/kineto-stack/tree/main/packages/templates/vite/vite-bun-shadcn"
                 target="_blank"
                 rel="noopener noreferrer"
               >

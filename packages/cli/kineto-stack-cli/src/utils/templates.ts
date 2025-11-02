@@ -19,7 +19,15 @@ export const templates: Template[] = [
     packageManager: "bun",
   },
   {
-    id: "vite-shadcn",
+    id: "bun-vite-mantine",
+    name: "",
+    description:
+      "Vite + Bun + Mantine + TanStack Router + TanStack Query + Jotai",
+    repository: `${KINETO_STACK_REPO}/packages/templates/vite/vite-bun-mantine`,
+    packageManager: "bun",
+  },
+  {
+    id: "bun-vite-shadcn",
     name: "",
     description:
       "Vite + React + ShadCN + Tailwind CSS + TanStack Query + Jotai + TanStack Router",

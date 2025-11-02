@@ -1,13 +1,13 @@
-# kineto-stack Bun Next.js Mantine Template
+# kineto-stack Bun Vite Mantine Template
 
-A modern, production-ready Next.js template built with Bun runtime, featuring Mantine UI, TanStack Query, and Jotai for state management. This template provides a solid foundation for building scalable React applications with TypeScript, theme switching, and optimal developer experience.
+A modern, production-ready Vite template built with Bun runtime, featuring Mantine UI, TanStack Query, TanStack Router, and Jotai for state management. This template provides a solid foundation for building scalable React applications with TypeScript, theme switching, and optimal developer experience.
 
 ## Tech Stack
 
 ### Core Framework
 
-- **Next.js 16.0.1** - React framework with App Router
-- **React 19.2.0** - Latest React version with improved features
+- **Vite 7.1.7** - Next-generation frontend tooling
+- **React 19.1.1** - Latest React version with improved features
 - **TypeScript 5** - Type-safe development
 
 ### Runtime & Package Manager
@@ -18,17 +18,21 @@ A modern, production-ready Next.js template built with Bun runtime, featuring Ma
 
 - **Mantine 8.3.6** - Comprehensive React component library
 - **PostCSS** - CSS processing with Mantine preset
-- **CSS Modules** - Scoped styling support
+- **Tabler Icons React 3.35.0** - Beautiful open-source icons
+
+### Routing
+
+- **TanStack Router 1.134.9** - Type-safe routing for React
+- **TanStack Router DevTools** - Development tools for routing
 
 ### State Management & Data Fetching
 
 - **TanStack Query 5.90.6** - Powerful data synchronization for React
 - **Jotai 2.15.1** - Primitive and flexible state management for React
 
-### Icons
+### React Compiler
 
-- **Tabler Icons React 3.35.0** - Beautiful open-source icons
-- **Mantine Dev Icons 2.0.0** - Additional icon set
+- **babel-plugin-react-compiler** - Automatic optimization for React components
 
 ## Features
 
@@ -40,40 +44,57 @@ A modern, production-ready Next.js template built with Bun runtime, featuring Ma
   - Auto mode (follows system preference)
 - Theme preference persisted in localStorage
 - Seamless theme transitions across the application
+- Fixed header with theme switcher button
+
+### Type-Safe Routing
+
+- TanStack Router for type-safe, file-based routing
+- Auto code splitting for optimal performance
+- Route tree generation for better DX
+- Router DevTools for debugging
 
 ### React Query Integration
 
-- Optimized QueryClient configuration for Next.js App Router
-- Server-side rendering (SSR) support with proper hydration
-- Automatic query client management (separate instances for server/browser)
-- Configurable stale time and query dehydration
+- Optimized QueryClient configuration
+- Default query options set up
+- Easy to extend with custom queries and mutations
 
 ### State Management
 
-- Jotai atoms setup with example atoms
+- Jotai atoms setup for local state management
 - Type-safe atom definitions
 - Easy to extend with custom atoms
 
 ### Developer Experience
 
 - TypeScript configured with strict mode
-- ESLint with Next.js recommended rules
-- Path aliases configured (@/_ for src/_)
+- ESLint with React recommended rules
+- React Compiler enabled for automatic optimizations
 - Hot module replacement (HMR) in development
 - PostCSS with Mantine breakpoint variables
+- Fast refresh for instant updates
 
 ### Project Structure
 
-- Organized folder structure following Next.js App Router conventions
-- Separated concerns: components, providers, lib, atoms
-- Clean and maintainable codebase
+```
+src/
+├── main.tsx                  # Application entry point
+├── providers/               # React context providers
+│   ├── index.tsx           # Main provider wrapper
+│   └── ReactQuery.provider.tsx  # TanStack Query provider
+├── components/              # Reusable React components
+│   └── ThemeSwitcher.tsx   # Theme switcher component
+└── routes/                 # TanStack Router routes
+    ├── __root.tsx          # Root route layout
+    ├── index.tsx           # Home page
+    └── routeTree.gen.ts    # Generated route tree
+```
 
 ## Getting Started
 
 ### Prerequisites
 
 - **Bun** 1.2.4 or higher installed on your system
-- Node.js 18+ (if not using Bun exclusively)
 
 Install Bun if you haven't already:
 
@@ -91,7 +112,7 @@ powershell -c "irm bun.sh/install.ps1 | iex"
 
 ```bash
 git clone <repository-url>
-cd kineto-stack-bun-nextjs-mantine
+cd kineto-stack-bun-mantine-vite
 ```
 
 2. Install dependencies:
@@ -106,33 +127,13 @@ bun install
 bun dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Project Structure
-
-```
-src/
-├── app/                    # Next.js App Router directory
-│   ├── layout.tsx         # Root layout with providers
-│   ├── page.tsx           # Home page
-│   ├── globals.css        # Global styles
-│   └── page.module.css    # Page-specific styles
-├── components/            # Reusable React components
-│   └── ThemeSwitcher.tsx  # Theme switcher component
-├── providers/             # React context providers
-│   ├── index.tsx         # Main provider wrapper
-│   └── ReactQueryProvider.tsx  # TanStack Query provider
-├── lib/                   # Utility functions and helpers
-│   └── get-query-client.ts  # QueryClient factory
-└── atom/                  # Jotai atoms
-    └── index.atom.ts     # Atom definitions
-```
+4. Open [http://localhost:5172](http://localhost:5172) in your browser
 
 ## Available Scripts
 
-- `bun dev` - Start development server on port 3000
+- `bun dev` - Start development server on port 5172
 - `bun build` - Build production-ready application
-- `bun start` - Start production server (run after build)
+- `bun preview` - Preview production build locally
 - `bun lint` - Run ESLint to check code quality
 
 ## Configuration Files
@@ -140,13 +141,15 @@ src/
 ### TypeScript (`tsconfig.json`)
 
 - Strict type checking enabled
-- Path aliases configured (@/_ maps to src/_)
-- Next.js plugins and optimizations
+- React JSX support
+- Modern ES2022 target
+- Module resolution configured for Vite
 
-### Next.js (`next.config.ts`)
+### Vite (`vite.config.ts`)
 
-- TypeScript configuration
-- Extensible for custom Next.js features
+- React plugin with Fast Refresh
+- TanStack Router plugin with auto code splitting
+- React Compiler integration
 
 ### PostCSS (`postcss.config.cjs`)
 
@@ -158,11 +161,11 @@ src/
   - lg: 75em
   - xl: 88em
 
-### ESLint (`eslint.config.mjs`)
+### ESLint (`eslint.config.js`)
 
-- Next.js core web vitals rules
-- TypeScript-specific rules
-- Production-ready linting configuration
+- React recommended rules
+- React hooks linting
+- Modern ESLint flat config
 
 ## Key Features Explained
 
@@ -173,35 +176,46 @@ The theme switcher component (`src/components/ThemeSwitcher.tsx`) provides a sim
 **Usage:**
 
 ```tsx
-import ThemeSwitcher from "@/components/ThemeSwitcher";
+import ThemeSwitcher from "../components/ThemeSwitcher";
 
 <ThemeSwitcher />;
 ```
 
+### TanStack Router
+
+File-based routing with automatic route generation. Create new routes by adding files in the `src/routes/` directory:
+
+```tsx
+// src/routes/about.tsx
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/about")({
+  component: About,
+});
+
+function About() {
+  return <div>About Page</div>;
+}
+```
+
 ### React Query Setup
 
-The React Query configuration (`src/lib/get-query-client.ts`) is optimized for Next.js App Router:
-
-- Separate query clients for server and browser
-- Prevents query client recreation during React suspense
-- Includes pending queries in dehydration for better SSR
-- Default stale time of 60 seconds
-
-**Customize query defaults:**
+The React Query configuration is provided in `src/providers/ReactQuery.provider.tsx`. Customize the default options:
 
 ```typescript
-// src/lib/get-query-client.ts
-defaultOptions: {
-  queries: {
-    staleTime: 60 * 1000, // Adjust as needed
-    // Add more default options
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000, // Adjust as needed
+      // Add more default options
+    },
   },
-}
+});
 ```
 
 ### State Management with Jotai
 
-Example atoms are provided in `src/atom/index.atom.ts`. You can create new atoms following the same pattern:
+Create atoms in separate files and use them throughout your app:
 
 ```typescript
 import { atom } from "jotai";
@@ -213,7 +227,7 @@ export const myAtom = atom<string>("default value");
 
 ```tsx
 import { useAtom } from "jotai";
-import { myAtom } from "@/atom";
+import { myAtom } from "@/atoms";
 
 const [value, setValue] = useAtom(myAtom);
 ```
@@ -231,6 +245,12 @@ const theme = createTheme({
 ```
 
 ## Customization
+
+### Adding New Routes
+
+1. Create route files in `src/routes/`
+2. Use `createFileRoute` from TanStack Router
+3. Routes are automatically generated in `routeTree.gen.ts`
 
 ### Adding New Components
 
@@ -253,15 +273,6 @@ The main provider wrapper (`src/providers/index.tsx`) combines all context provi
 </MantineProvider>
 ```
 
-### Path Aliases
-
-The template uses `@/*` to reference the `src/*` directory. Import files like:
-
-```typescript
-import Component from "@/components/Component";
-import { utility } from "@/lib/utility";
-```
-
 ## Best Practices
 
 ### Code Organization
@@ -269,21 +280,15 @@ import { utility } from "@/lib/utility";
 - Keep components small and focused
 - Use TypeScript interfaces for props
 - Extract reusable logic into custom hooks
-- Place utility functions in `src/lib/`
+- Use TanStack Query for server state
+- Use Jotai atoms for local component state
 
 ### Styling
 
 - Use Mantine components when possible
-- Prefer CSS Modules for component-specific styles
-- Use Mantine's responsive utilities for breakpoints
+- Leverage Mantine's style props for consistency
+- Use responsive utilities for breakpoints
 - Maintain consistent spacing using Mantine's spacing scale
-
-### State Management
-
-- Use Jotai atoms for component-level state
-- Use TanStack Query for server state
-- Consider React Query mutations for data mutations
-- Keep atoms close to where they're used when possible
 
 ### TypeScript
 
@@ -300,23 +305,24 @@ import { utility } from "@/lib/utility";
 bun build
 ```
 
-This creates an optimized production build in the `.next` directory.
+This creates an optimized production build in the `dist` directory.
 
-### Deploy to Vercel (Recommended)
+### Deploy to Vercel
 
 1. Push your code to GitHub, GitLab, or Bitbucket
 2. Import your repository in [Vercel](https://vercel.com)
-3. Vercel will automatically detect Next.js and configure the build
-4. Your app will be deployed automatically
+3. Configure build command: `bun build`
+4. Set output directory to `dist`
+5. Your app will be deployed automatically
 
 ### Deploy to Other Platforms
 
-This template works with any platform that supports Next.js:
+This template works with any platform that supports static sites:
 
-- **Netlify** - Configure build command: `bun build`
-- **Railway** - Automatic Next.js detection
-- **Docker** - Create a Dockerfile for containerized deployment
-- **Self-hosted** - Use `bun start` after building
+- **Netlify** - Configure build command: `bun build` and output: `dist`
+- **GitHub Pages** - Use GitHub Actions to build and deploy
+- **Cloudflare Pages** - Automatic static site deployment
+- **Self-hosted** - Serve the `dist` directory with any web server
 
 ## Browser Support
 
@@ -329,10 +335,10 @@ This template supports all modern browsers:
 
 ## Learning Resources
 
-### Next.js
+### Vite
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Next.js App Router Guide](https://nextjs.org/docs/app)
+- [Vite Documentation](https://vite.dev)
+- [Vite Plugin API](https://vite.dev/plugin/)
 
 ### Mantine
 
@@ -340,9 +346,10 @@ This template supports all modern browsers:
 - [Mantine Components](https://mantine.dev/core/)
 - [Mantine Theming](https://mantine.dev/theming/mantine-provider/)
 
-### TanStack Query
+### TanStack
 
 - [TanStack Query Documentation](https://tanstack.com/query/latest)
+- [TanStack Router Documentation](https://tanstack.com/router/latest)
 - [React Query Guide](https://tanstack.com/query/latest/docs/react/overview)
 
 ### Jotai
@@ -354,6 +361,11 @@ This template supports all modern browsers:
 
 - [Bun Documentation](https://bun.sh/docs)
 - [Bun Runtime](https://bun.sh)
+
+### React
+
+- [React Documentation](https://react.dev)
+- [React Compiler](https://react.dev/learn/react-compiler)
 
 ## Contributing
 
@@ -374,7 +386,7 @@ This template is available for use in personal and commercial projects. Customiz
 For issues and questions:
 
 - Check the documentation of respective libraries
-- Review Next.js, Mantine, and TanStack Query documentation
+- Review Vite, Mantine, and TanStack documentation
 - Open an issue in the repository if you find bugs
 
 ## Version
