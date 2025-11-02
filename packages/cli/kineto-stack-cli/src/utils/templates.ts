@@ -6,14 +6,21 @@ const KINETO_STACK_REPO = "KennethAduan/kineto-stack";
 export const templates: Template[] = [
   {
     id: "bun-nextjs-mantine",
-    name: "kineto-stack Bun Next.js Mantine",
+    name: "",
     description: "Next.js 16 + Bun + Mantine + TanStack Query + Jotai",
     repository: `${KINETO_STACK_REPO}/packages/templates/next/next-js-bun-mantine`,
     packageManager: "bun",
   },
   {
+    id: "bun-nextjs-shadcn",
+    name: "",
+    description: "Next.js 16 + Bun + ShadCN + TanStack Query + Jotai",
+    repository: `${KINETO_STACK_REPO}/packages/templates/next/next-js-bun-shadcn`,
+    packageManager: "bun",
+  },
+  {
     id: "vite-shadcn",
-    name: "kineto-stack Vite ShadCN",
+    name: "",
     description:
       "Vite + React + ShadCN + Tailwind CSS + TanStack Query + Jotai + TanStack Router",
     repository: `${KINETO_STACK_REPO}/packages/templates/vite/vite-bun-shadcn`,
