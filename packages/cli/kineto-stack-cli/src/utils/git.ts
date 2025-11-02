@@ -8,9 +8,32 @@ export async function cloneRepository(
   repository: string,
   targetPath: string
 ): Promise<void> {
-  const emitter = degit(repository);
+  try {
+    const emitter = degit(repository, {
+      cache: false,
+      verbose: true,
+    });
 
-  await emitter.clone(targetPath);
+    await emitter.clone(targetPath);
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+
+    // Provide more helpful error messages
+    if (
+      errorMessage.includes("could not find commit hash") ||
+      errorMessage.includes("not found")
+    ) {
+      throw new Error(
+        `Template not found. Please ensure:\n` +
+          `1. The repository exists at: ${repository}\n` +
+          `2. The repository is public or you have access\n` +
+          `3. The subdirectory path is correct\n\n` +
+          `Original error: ${errorMessage}`
+      );
+    }
+
+    throw error;
+  }
 }
 
 export function removeGitFolder(projectPath: string): void {
@@ -27,4 +50,3 @@ export function initGitRepository(projectPath: string): void {
     throw new Error("Failed to initialize Git repository");
   }
 }
-
