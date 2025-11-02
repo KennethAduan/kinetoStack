@@ -14,7 +14,8 @@ export const templates: Template[] = [
   {
     id: "bun-nextjs-shadcn",
     name: "",
-    description: "Next.js 16 + Bun + ShadCN + TanStack Query + Jotai",
+    description:
+      "Next.js 16 + Bun + Shadcn + Tailwind CSS + TanStack Query + Jotai",
     repository: `${KINETO_STACK_REPO}/packages/templates/next/next-js-bun-shadcn`,
     packageManager: "bun",
   },
@@ -22,7 +23,7 @@ export const templates: Template[] = [
     id: "bun-vite-mantine",
     name: "",
     description:
-      "Vite + Bun + Mantine + TanStack Router + TanStack Query + Jotai",
+      "Vite + React + Bun + Mantine + TanStack Query + TanStack Router + Jotai",
     repository: `${KINETO_STACK_REPO}/packages/templates/vite/vite-bun-mantine`,
     packageManager: "bun",
   },
@@ -30,7 +31,7 @@ export const templates: Template[] = [
     id: "bun-vite-shadcn",
     name: "",
     description:
-      "Vite + React + ShadCN + Tailwind CSS + TanStack Query + Jotai + TanStack Router",
+      "Vite + React + Bun + ShadCN + Tailwind CSS + TanStack Query + TanStack Router + Jotai",
     repository: `${KINETO_STACK_REPO}/packages/templates/vite/vite-bun-shadcn`,
     packageManager: "bun",
   },
