@@ -1,22 +1,22 @@
 import { Template } from "../types";
 
 // Base repository URL for the turbo repo
-const KINETOSTACK_REPO = "https://github.com/KennethAduan/kinetoStack.git";
+const KINETO_STACK_REPO = "https://github.com/KennethAduan/kineto-stack.git";
 
 export const templates: Template[] = [
   {
     id: "bun-nextjs-mantine",
-    name: "KinetoStack Bun Next.js Mantine",
+    name: "kineto-stack Bun Next.js Mantine",
     description: "Next.js 16 + Bun + Mantine + TanStack Query + Jotai",
-    repository: `${KINETOSTACK_REPO}#packages/templates/next/next-js-bun-mantine`,
+    repository: `${KINETO_STACK_REPO}#packages/templates/next/next-js-bun-mantine`,
     packageManager: "bun",
   },
   {
     id: "vite-shadcn",
-    name: "KinetoStack Vite ShadCN",
+    name: "kineto-stack Vite ShadCN",
     description:
       "Vite + React + ShadCN + Tailwind CSS + TanStack Query + Jotai + TanStack Router",
-    repository: `${KINETOSTACK_REPO}#packages/templates/vite/vite-bun-shadcn`,
+    repository: `${KINETO_STACK_REPO}#packages/templates/vite/vite-bun-shadcn`,
     packageManager: "bun",
   },
 ];

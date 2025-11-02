@@ -1,4 +1,4 @@
-# kinetoStack CLI - Quick Start Guide
+# kineto-stack-cli - Quick Start Guide
 
 ## Installation
 

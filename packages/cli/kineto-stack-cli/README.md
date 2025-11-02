@@ -1,4 +1,4 @@
-# kinetoStack CLI
+# kineto-stack-cli
 
 A powerful CLI tool to quickly scaffold KenStack templates for modern web development. Choose between Next.js with Mantine or Vite with ShadCN to kickstart your project instantly.
 
@@ -17,36 +17,36 @@ A powerful CLI tool to quickly scaffold KenStack templates for modern web develo
 - **Tech Stack**: Next.js 16, Bun, Mantine, TanStack Query, Jotai
 - **Best For**: Full-stack applications with beautiful UI components
 - **Package Manager**: Bun
-- **Source**: [kinetoStack](https://github.com/KennethAduan/kinetoStack) (Turbo Repo Template)
+- **Source**: [kineto-stack](https://github.com/KennethAduan/kineto-stack) (Turbo Repo Template)
 
 ### 2. KenStack Vite ShadCN
 
 - **Tech Stack**: Vite, React, ShadCN, Tailwind CSS
 - **Best For**: Fast, modern React applications with accessible components
 - **Package Manager**: npm, yarn, pnpm, or bun (your choice)
-- **Source**: [kinetoStack](https://github.com/KennethAduan/kinetoStack) (Turbo Repo Template)
+- **Source**: [kineto-stack](https://github.com/KennethAduan/kineto-stack) (Turbo Repo Template)
 
 ## Installation
 
 ### Option 1: Using npx (Recommended)
 
 ```bash
-npx kinetoStack-cli create my-app
+npx kineto-stack-cli create my-app
 ```
 
 ### Option 2: Global Installation
 
 ```bash
-npm install -g kinetoStack-cli
-kinetoStack create my-app
+npm install -g kineto-stack-cli
+kineto-stack create my-app
 ```
 
 ### Option 3: Local Development
 
 ```bash
 # Clone the repository
-git clone https://github.com/KennethAduan/kinetoStack.git
-cd kinetoStack/packages/cli/kinetoStack-cli
+git clone https://github.com/KennethAduan/kineto-stack.git
+cd kineto-stack/packages/cli/kineto-stack-cli
 
 # Install dependencies
 npm install
@@ -58,7 +58,7 @@ npm run build
 npm link
 
 # Use it
-kinetoStack create my-app
+kineto-stack create my-app
 ```
 
 ## Usage
@@ -66,13 +66,13 @@ kinetoStack create my-app
 ### Basic Usage
 
 ```bash
-kinetoStack create <project-name>
+kineto-stack create <project-name>
 ```
 
 Example:
 
 ```bash
-kinetoStack create my-awesome-app
+kineto-stack create my-awesome-app
 ```
 
 ### Interactive Flow
@@ -182,7 +182,7 @@ Check your internet connection and ensure you have Git installed.
 
 For issues and questions:
 
-- Open an issue on [GitHub](https://github.com/KennethAduan/kinetoStack/issues)
+- Open an issue on [GitHub](https://github.com/KennethAduan/kineto-stack/issues)
 - Check the template repositories for framework-specific help
 
 ---

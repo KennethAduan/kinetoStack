@@ -1,4 +1,4 @@
-# kinetoStack
+# kineto-stack
 
 A Turborepo monorepo for hosting and managing reusable project templates with an integrated CLI tool for easy scaffolding.
 
@@ -7,7 +7,7 @@ A Turborepo monorepo for hosting and managing reusable project templates with an
 This repository serves as a centralized hub for all your project templates. It provides:
 
 - **Template Management**: All templates in one place for easy maintenance and updates
-- **CLI Tool**: Quick scaffolding of projects using `kinetoStack` CLI
+- **CLI Tool**: Quick scaffolding of projects using `kineto-stack-cli` CLI
 - **Version Control**: Track template changes and improvements over time
 - **Build Optimization**: Turborepo caching for faster template builds
 
@@ -34,12 +34,12 @@ This Turborepo includes:
    - Jotai for atomic state management
    - TypeScript with full type safety
 
-### CLI Tool (`packages/cli/kinetoStack-cli`)
+### CLI Tool (`packages/cli/kineto-stack-cli`)
 
 A command-line tool that allows you to scaffold new projects from templates:
 
 ```bash
-kinetoStack create my-project
+kineto-stack-cli create my-project
 ```
 
 The CLI automatically:
@@ -62,8 +62,8 @@ The CLI automatically:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/KennethAduan/kinetoStack.git
-   cd kinetoStack
+   git clone https://github.com/KennethAduan/kineto-stack.git
+   cd kineto-stack
    ```
 
 2. **Install dependencies**:
@@ -84,22 +84,28 @@ The CLI automatically:
 From the CLI package directory:
 
 ```bash
-cd packages/cli/kinetoStack-cli
+cd packages/cli/kineto-stack-cli
 bun install
 bun run build
 bun link
 ```
 
-#### Or Use via npx (when published)
+#### Or Install from npm
 
 ```bash
-npx kinetoStack-cli create my-project
+npm install -g kineto-stack-cli
+```
+
+#### Or Use via npx (no installation needed)
+
+```bash
+npx kineto-stack-cli create my-project
 ```
 
 #### Create a New Project
 
 ```bash
-kinetoStack create my-project
+kineto-stack-cli create my-project
 ```
 
 You'll be prompted to:
@@ -137,40 +143,40 @@ bun run format
 
 ```bash
 # Build Next.js template
-turbo build --filter=kinetoStack-bun-nextjs-mantine
+turbo build --filter=kineto-stack-bun-nextjs-mantine
 
 # Build Vite template
-turbo build --filter=kinetoStack-bun-shadcn-vite
+turbo build --filter=kineto-stack-bun-shadcn-vite
 
 # Build CLI
-turbo build --filter=kinetoStack-cli
+turbo build --filter=kineto-stack-cli
 ```
 
 #### Run Development Server for a Template
 
 ```bash
 # Next.js template
-turbo dev --filter=kinetoStack-bun-nextjs-mantine
+turbo dev --filter=kineto-stack-bun-nextjs-mantine
 
 # Vite template
-turbo dev --filter=kinetoStack-bun-shadcn-vite
+turbo dev --filter=kineto-stack-bun-shadcn-vite
 ```
 
 #### Lint a Specific Package
 
 ```bash
-turbo lint --filter=kinetoStack-bun-nextjs-mantine
-turbo lint --filter=kinetoStack-bun-shadcn-vite
-turbo lint --filter=kinetoStack-cli
+turbo lint --filter=kineto-stack-bun-nextjs-mantine
+turbo lint --filter=kineto-stack-bun-shadcn-vite
+turbo lint --filter=kineto-stack-cli
 ```
 
 ### Project Structure
 
 ```
-kinetoStack/
+kineto-stack/
 ├── packages/
 │   ├── cli/
-│   │   └── kinetoStack-cli/          # CLI tool for scaffolding
+│   │   └── kineto-stack-cli/          # CLI tool for scaffolding
 │   │       ├── bin/                   # Executable entry point
 │   │       ├── src/                   # Source code
 │   │       └── dist/                 # Compiled output
@@ -200,21 +206,21 @@ To add a new template:
 
 2. Update `turbo.json` if needed to handle new build outputs
 
-3. Add the template to `packages/cli/kinetoStack-cli/src/utils/templates.ts`:
+3. Add the template to `packages/cli/kineto-stack-cli/src/utils/templates.ts`:
 
    ```typescript
    {
      id: "template-id",
      name: "Template Name",
      description: "Template description",
-     repository: `${KINETOSTACK_REPO}#packages/templates/category/template-name`,
+     repository: `${KINETO_STACK_REPO}#packages/templates/category/template-name`,
      packageManager: "bun",
    }
    ```
 
 4. Rebuild the CLI:
    ```bash
-   cd packages/cli/kinetoStack-cli
+   cd packages/cli/kineto-stack-cli
    bun run build
    ```
 

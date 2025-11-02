@@ -1,5 +1,5 @@
 {
-  "name": "kinetoStack",
+  "name": "kineto-stack",
   "private": true,
   "scripts": {
     "build": "turbo run build",

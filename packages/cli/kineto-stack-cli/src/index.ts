@@ -7,14 +7,14 @@ import { logger } from "./utils/logger";
 const program = new Command();
 
 program
-  .name("kinetoStack")
-  .description("CLI tool to scaffold kinetoStack templates")
+  .name("kineto-stack")
+  .description("CLI tool to scaffold kineto-stack templates")
   .version("0.1.0");
 
 program
   .command("create")
   .argument("<project-name>", "Name of the project to create")
-  .description("Create a new project from a kinetoStack template")
+  .description("Create a new project from a kineto-stack template")
   .action(async (projectName: string) => {
     try {
       const options = await promptForOptions(projectName);

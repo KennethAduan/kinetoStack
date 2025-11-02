@@ -14,7 +14,7 @@ function Index() {
       <header className="border-b">
         <div className="container flex justify-between items-center px-4 py-4 mx-auto">
           <div className="flex gap-2 items-center">
-            <h1 className="text-xl font-bold">kinetoStack</h1>
+            <h1 className="text-xl font-bold">kineto-stack</h1>
             <span className="text-sm text-muted-foreground">Template</span>
           </div>
           <ModeToggle />
