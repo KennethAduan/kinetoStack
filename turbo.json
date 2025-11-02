@@ -10,7 +10,8 @@
         "!.next/cache/**",
         "dist/**",
         "build/**",
-        ".vite/**"
+        ".vite/**",
+        "bin/**"
       ]
     },
     "lint": {

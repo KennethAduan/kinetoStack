@@ -21,6 +21,7 @@
     "apps/*",
     "packages/*",
     "packages/templates/next/*",
-    "packages/templates/vite/*"
+    "packages/templates/vite/*",
+    "packages/cli/*"
   ]
 }
