@@ -17,6 +17,8 @@ This Turborepo includes:
 
 ### Templates (`packages/templates/`)
 
+#### Next.js Templates
+
 1. **Next.js + Bun + Mantine** (`packages/templates/next/next-js-bun-mantine`)
    - Next.js 16 with App Router
    - Bun runtime and package manager
@@ -24,15 +26,40 @@ This Turborepo includes:
    - TanStack Query for data fetching
    - Jotai for state management
    - TypeScript with strict mode
+   - Built-in theme switcher (light/dark/auto)
 
-2. **Vite + ShadCN** (`packages/templates/vite/vite-bun-shadcn`)
-   - Vite for lightning-fast development
-   - ShadCN UI components
-   - Tailwind CSS for styling
+2. **Next.js + Bun + ShadCN** (`packages/templates/next/next-js-bun-shadcn`)
+   - Next.js 16 with App Router
+   - Bun runtime and package manager
+   - ShadCN UI components with Radix UI
+   - Tailwind CSS 4 for styling
+   - TanStack Query for data fetching
+   - Jotai for state management
+   - TypeScript with strict mode
+   - Dark mode theme provider with system preference
+
+#### Vite Templates
+
+3. **Vite + Bun + Mantine** (`packages/templates/vite/vite-bun-mantine`)
+   - Vite 7 for lightning-fast development
+   - Bun runtime and package manager
+   - Mantine UI components
    - TanStack Router for type-safe routing
    - TanStack Query for data synchronization
    - Jotai for atomic state management
    - TypeScript with full type safety
+   - File-based routing with auto code splitting
+
+4. **Vite + Bun + ShadCN** (`packages/templates/vite/vite-bun-shadcn`)
+   - Vite 7 for lightning-fast development
+   - Bun runtime and package manager
+   - ShadCN UI components with Radix UI
+   - Tailwind CSS 4 for styling
+   - TanStack Router for type-safe routing
+   - TanStack Query for data synchronization
+   - Jotai for atomic state management
+   - TypeScript with full type safety
+   - Dark mode theme provider
 
 ### CLI Tool (`packages/cli/kineto-stack-cli`)
 
@@ -110,9 +137,12 @@ kineto-stack-cli create my-project
 
 You'll be prompted to:
 
-1. Select a template (Next.js Mantine or Vite ShadCN)
-2. Choose a package manager (for Vite template)
-3. Wait for automatic setup to complete
+1. Select a template:
+   - Next.js + Bun + Mantine
+   - Next.js + Bun + ShadCN
+   - Vite + Bun + Mantine
+   - Vite + Bun + ShadCN
+2. Wait for automatic setup to complete
 
 ## Development
 
@@ -142,10 +172,16 @@ bun run format
 #### Build a Specific Template
 
 ```bash
-# Build Next.js template
+# Build Next.js Mantine template
 turbo build --filter=kineto-stack-bun-nextjs-mantine
 
-# Build Vite template
+# Build Next.js ShadCN template
+turbo build --filter=kineto-stack-bun-nextjs-shadcn
+
+# Build Vite Mantine template
+turbo build --filter=kineto-stack-bun-mantine-vite
+
+# Build Vite ShadCN template
 turbo build --filter=kineto-stack-bun-shadcn-vite
 
 # Build CLI
@@ -155,10 +191,16 @@ turbo build --filter=kineto-stack-cli
 #### Run Development Server for a Template
 
 ```bash
-# Next.js template
+# Next.js Mantine template (port 3001)
 turbo dev --filter=kineto-stack-bun-nextjs-mantine
 
-# Vite template
+# Next.js ShadCN template (port 3002)
+turbo dev --filter=kineto-stack-bun-nextjs-shadcn
+
+# Vite Mantine template (port 5172)
+turbo dev --filter=kineto-stack-bun-mantine-vite
+
+# Vite ShadCN template (port 5171)
 turbo dev --filter=kineto-stack-bun-shadcn-vite
 ```
 
@@ -166,6 +208,8 @@ turbo dev --filter=kineto-stack-bun-shadcn-vite
 
 ```bash
 turbo lint --filter=kineto-stack-bun-nextjs-mantine
+turbo lint --filter=kineto-stack-bun-nextjs-shadcn
+turbo lint --filter=kineto-stack-bun-mantine-vite
 turbo lint --filter=kineto-stack-bun-shadcn-vite
 turbo lint --filter=kineto-stack-cli
 ```
@@ -182,9 +226,11 @@ kineto-stack/
 │   │       └── dist/                 # Compiled output
 │   └── templates/
 │       ├── next/
-│       │   └── next-js-bun-mantine/  # Next.js + Mantine template
+│       │   ├── next-js-bun-mantine/  # Next.js + Bun + Mantine template
+│       │   └── next-js-bun-shadcn/   # Next.js + Bun + ShadCN template
 │       └── vite/
-│           └── vite-bun-shadcn/      # Vite + ShadCN template
+│           ├── vite-bun-mantine/     # Vite + Bun + Mantine template
+│           └── vite-bun-shadcn/      # Vite + Bun + ShadCN template
 ├── package.json                       # Root workspace config
 ├── turbo.json                         # Turborepo configuration
 └── README.md                          # This file
@@ -232,6 +278,10 @@ To add a new template:
 - **CLI Integration**: Easy project scaffolding with the integrated CLI
 - **Git Subdirectory Support**: Templates cloned from specific subdirectories
 - **Package Manager Flexibility**: Support for Bun, npm, yarn, and pnpm
+- **Multiple Template Options**: Choose from 4 production-ready templates
+- **Modern Tech Stack**: Latest versions of React, Next.js, Vite, and more
+- **UI Framework Choice**: Pick between Mantine or ShadCN UI components
+- **Built-in State Management**: Jotai for client state, TanStack Query for server state
 
 ## Contributing
 
@@ -257,20 +307,40 @@ This project is licensed under the MIT License.
 
 ## Useful Links
 
+### Core Technologies
+
 - [Turborepo Documentation](https://turborepo.org/docs)
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Vite Documentation](https://vitejs.dev/)
+- [Bun Documentation](https://bun.sh/docs)
+
+### UI Frameworks
+
 - [Mantine Documentation](https://mantine.dev/)
 - [ShadCN UI](https://ui.shadcn.com/)
+- [Radix UI](https://www.radix-ui.com/)
+
+### State Management & Data Fetching
+
+- [TanStack Query Documentation](https://tanstack.com/query/latest)
+- [TanStack Router Documentation](https://tanstack.com/router/latest)
+- [Jotai Documentation](https://jotai.org)
+
+### Styling
+
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
 ## Acknowledgments
 
 - [Turborepo](https://turborepo.org/) for the amazing monorepo tooling
 - [Next.js](https://nextjs.org/) for the React framework
 - [Vite](https://vitejs.dev/) for the build tool
-- [Mantine](https://mantine.dev/) for the UI components
-- [ShadCN UI](https://ui.shadcn.com/) for the accessible components
+- [Mantine](https://mantine.dev/) for the comprehensive UI components
+- [ShadCN UI](https://ui.shadcn.com/) for the accessible component library
+- [TanStack](https://tanstack.com/) for Query and Router tools
+- [Jotai](https://jotai.org/) for atomic state management
 - [Bun](https://bun.sh/) for the fast runtime and package manager
+- [Radix UI](https://www.radix-ui.com/) for accessible component primitives
 
 ---
 
