@@ -1,29 +1,53 @@
 # kineto-stack-cli
 
-A powerful CLI tool to quickly scaffold kineto-stack templates for modern web development. Choose between Next.js with Mantine or Vite with ShadCN to kickstart your project instantly.
+A powerful CLI tool to quickly scaffold kineto-stack templates for modern web development. Choose from 4 production-ready templates (Next.js or Vite, with Mantine or ShadCN UI) to kickstart your project instantly.
 
 ## Features
 
-- **Interactive Template Selection** - Choose your preferred stack with ease
-- **Automatic Dependency Installation** - Let the CLI handle package management
+- **Interactive Template Selection** - Choose from 4 production-ready templates
+- **Automatic Dependency Installation** - Let the CLI handle package management with Bun
 - **Beautiful Terminal Output** - Colored logs and spinners for better UX
-- **Multiple Package Managers** - Supports npm, yarn, pnpm, and bun
-- **Full Project Setup** - Includes Git initialization and dependencies
+- **Full Project Setup** - Includes Git initialization, dependencies, and project configuration
+- **Modern Tech Stack** - Latest versions of React, Next.js, Vite, and more
+- **Type-Safe Templates** - All templates include TypeScript with strict mode
+- **State Management Built-in** - Jotai for client state, TanStack Query for server state
 
 ## Available Templates
 
-### 1. kineto-stack Bun Next.js Mantine
+### Next.js Templates
 
-- **Tech Stack**: Next.js 16, Bun, Mantine, TanStack Query, Jotai
-- **Best For**: Full-stack applications with beautiful UI components
+#### 1. Next.js + Bun + Mantine
+
+- **Tech Stack**: Next.js 16, React 19, Bun, Mantine UI, TanStack Query, Jotai
+- **Best For**: Full-stack applications with comprehensive UI components
 - **Package Manager**: Bun
+- **Features**: App Router, SSR support, theme switcher (light/dark/auto), TypeScript strict mode
 - **Source**: [kineto-stack](https://github.com/KennethAduan/kineto-stack) (Turbo Repo Template)
 
-### 2. kineto-stack Vite ShadCN
+#### 2. Next.js + Bun + ShadCN
 
-- **Tech Stack**: Vite, React, ShadCN, Tailwind CSS
-- **Best For**: Fast, modern React applications with accessible components
-- **Package Manager**: npm, yarn, pnpm, or bun (your choice)
+- **Tech Stack**: Next.js 16, React 19, Bun, ShadCN UI, Tailwind CSS 4, TanStack Query, Jotai
+- **Best For**: Full-stack applications with accessible, customizable components
+- **Package Manager**: Bun
+- **Features**: App Router, SSR support, dark mode with system preference, Radix UI primitives
+- **Source**: [kineto-stack](https://github.com/KennethAduan/kineto-stack) (Turbo Repo Template)
+
+### Vite Templates
+
+#### 3. Vite + Bun + Mantine
+
+- **Tech Stack**: Vite 7, React 19, Bun, Mantine UI, TanStack Router, TanStack Query, Jotai
+- **Best For**: Fast SPA development with type-safe routing and comprehensive UI components
+- **Package Manager**: Bun
+- **Features**: File-based routing, auto code splitting, theme switcher, React Compiler
+- **Source**: [kineto-stack](https://github.com/KennethAduan/kineto-stack) (Turbo Repo Template)
+
+#### 4. Vite + Bun + ShadCN
+
+- **Tech Stack**: Vite 7, React 19, Bun, ShadCN UI, Tailwind CSS 4, TanStack Router, TanStack Query, Jotai
+- **Best For**: Fast SPA development with accessible components and type-safe routing
+- **Package Manager**: Bun
+- **Features**: File-based routing, auto code splitting, dark mode, Radix UI primitives
 - **Source**: [kineto-stack](https://github.com/KennethAduan/kineto-stack) (Turbo Repo Template)
 
 ## Installation
@@ -78,20 +102,21 @@ kineto-stack create my-awesome-app
 ### Interactive Flow
 
 1. **Choose a Template**
-   - Select between kineto-stack Bun Next.js Mantine or kineto-stack Vite ShadCN
+   - Select from 4 available templates:
+     - Next.js + Bun + Mantine
+     - Next.js + Bun + ShadCN
+     - Vite + Bun + Mantine
+     - Vite + Bun + ShadCN
 
-2. **Select Package Manager** (for Vite template)
-   - Choose npm, yarn, pnpm, or bun
+2. **Automatic Setup**
+   - Template cloning from GitHub
+   - Dependency installation with Bun
+   - Git repository initialization
 
-3. **Automatic Setup**
-   - Template cloning
-   - Dependency installation
-   - Git initialization
-
-4. **Start Development**
+3. **Start Development**
    ```bash
    cd my-awesome-app
-   npm run dev
+   bun dev
    ```
 
 ## Project Structure
@@ -131,8 +156,8 @@ npm run lint
 ## Requirements
 
 - **Node.js**: >= 18.0.0
+- **Bun**: >= 1.2.4 (recommended package manager for all templates)
 - **Git**: For cloning templates
-- **Package Manager**: npm, yarn, pnpm, or bun (depending on template)
 
 ## Contributing
 
@@ -156,13 +181,26 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-- [Next.js](https://nextjs.org/)
-- [Vite](https://vitejs.dev/)
-- [Mantine](https://mantine.dev/)
-- [ShadCN UI](https://ui.shadcn.com/)
-- [degit](https://github.com/Rich-Harris/degit)
-- [Commander.js](https://github.com/tj/commander.js)
-- [Inquirer.js](https://github.com/SBoudrias/Inquirer.js)
+### Core Frameworks
+
+- [Next.js](https://nextjs.org/) - React framework with App Router
+- [Vite](https://vitejs.dev/) - Next-generation frontend tooling
+- [Bun](https://bun.sh/) - Fast JavaScript runtime and package manager
+
+### UI Frameworks
+
+- [Mantine](https://mantine.dev/) - Comprehensive React component library
+- [ShadCN UI](https://ui.shadcn.com/) - Accessible component library built with Radix UI
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+
+### Tools & Libraries
+
+- [TanStack Query](https://tanstack.com/query) - Powerful data synchronization
+- [TanStack Router](https://tanstack.com/router) - Type-safe routing
+- [Jotai](https://jotai.org/) - Primitive state management
+- [degit](https://github.com/Rich-Harris/degit) - Straightforward project scaffolding
+- [Commander.js](https://github.com/tj/commander.js) - CLI framework
+- [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) - Interactive command-line prompts
 
 ## Troubleshooting
 
@@ -170,9 +208,13 @@ This project is licensed under the MIT License.
 
 Make sure the project name doesn't conflict with an existing directory.
 
-### "No package manager detected"
+### "Bun not found"
 
-Install at least one package manager: npm, yarn, pnpm, or bun.
+Install Bun from [https://bun.sh](https://bun.sh) if it's not already installed:
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
 
 ### "Failed to clone repository"
 
